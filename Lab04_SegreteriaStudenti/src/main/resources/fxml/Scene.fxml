@@ -1,16 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.lab04.FXMLController">
-   <top>
-      <Label text="Lab4_Segreteria_Studenti" BorderPane.alignment="CENTER">
+   <center>
+      <VBox prefHeight="400.0" prefWidth="527.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="27.0" prefWidth="600.0">
+               <children>
+                  <Label text="Corsi:" />
+                  <ComboBox fx:id="choiceCorso" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="25.0" prefWidth="591.0">
+               <children>
+                  <Button fx:id="btnCercaIscritti" mnemonicParsing="false" onAction="#doCercaIscrittiCorso" text="Cerca Iscritti Corso" />
+               </children>
+            </HBox>
+            <HBox prefHeight="32.0" prefWidth="600.0">
+               <children>
+                  <Label text="Studente:" />
+                  <TextField fx:id="txtMatricola">
+                     <opaqueInsets>
+                        <Insets left="10.0" />
+                     </opaqueInsets>
+                  </TextField>
+                  <Button fx:id="btnPrendiMAtricola" mnemonicParsing="false" onAction="#doNomeECognome" style="-fx-background-color: green;" text="✓" textFill="#edf2ef" textOverrun="CLIP" />
+                  <TextField fx:id="txtNome" editable="false">
+                     <opaqueInsets>
+                        <Insets left="10.0" />
+                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="txtCognome" editable="false">
+                     <opaqueInsets>
+                        <Insets left="10.0" />
+                     </opaqueInsets>
+                  </TextField>
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="33.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="btnCercaCorsi" mnemonicParsing="false" onAction="#doCercaCorsi" text="Cerca corsi">
+                     <opaqueInsets>
+                        <Insets right="50.0" />
+                     </opaqueInsets>
+                  </Button>
+                  <Button fx:id="btnIscrivi" mnemonicParsing="false" onAction="#doIscrivi" text="Iscrivi" AnchorPane.rightAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <TextArea fx:id="txtResult" prefHeight="200.0" prefWidth="200.0" />
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doReset" text="Reset" />
+               </children>
+            </HBox>
+         </children>
          <BorderPane.margin>
-            <Insets top="20.0" />
+            <Insets />
          </BorderPane.margin>
-      </Label>
-   </top>
+      </VBox>
+   </center>
 </BorderPane>
